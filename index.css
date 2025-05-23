@@ -270,23 +270,36 @@
   opacity: 0.9;
 }
 
-.cta-btn {
-  background: var(--primary);
-  color: var(--text-dark);
+.cta-btn1 {
   padding: 15px 40px;
-  font-size: 1.2rem;
-  border-radius: 30px;
+  font-size: 1.1rem;
   font-weight: 700;
-  box-shadow: 0 8px 20px rgba(0, 216, 255, 0.5);
-  transition: background 0.3s ease;
+  text-transform: uppercase;
+  border-radius: 30px;
+  border: 2px solid #007bff;
+  background: white;
+  color: #0d2538;
   cursor: pointer;
-  border: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+  outline: none;
 }
 
-.cta-btn:hover {
-  background: var(--primary-hover);
-  color: white;
+/* Hover effect */
+.cta-btn1:hover {
+  background: linear-gradient(90deg, #add8ff, #e0b4ff);
+  color: #0d2538;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
 }
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn1:hover .arrow {
+  transform: translateX(5px);
+}
+
 
 .carousel-container {
   position: absolute;
