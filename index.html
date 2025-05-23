@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animated Header with Carousel</title>
+  <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/a2c5b6c8c9.js" crossorigin="anonymous"></script>
+  <body>
+  <header>
+    <div class="logo">NUAM</div>
+
+    <nav id="nav-menu">
+      <a href="#Home">Home</a>
+      <a href="#A">About Us</a>
+      <a href="#S">Services</a>
+      <a href="#contact" id="cont">Contact</a>
+    </nav>
+
+    <button class="cta-btn desktop-only" id="">Contact us</button>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+<!-- Hero Section -->
+  <!-- Hero Section -->
+  <section class="hero-section" id="Home">
+    <div class="hero-content">
+      <h1>Innovative Software Development & Digital Marketing</h1>
+      <p>Boost your business with cutting-edge technology and marketing strategies.</p>
+      <button class="cta-btn" id="service">Get Started</button>
+    </div>
+
+    <!-- Fullscreen Carousel -->
+    <div class="carousel-container">
+      <div class="carousel-slide" id="carousel-slide">
+        <img src="image1.png" alt="Slide 1" />
+        <img src="https://source.unsplash.com/1600x900/?marketing" alt="Slide 2" />
+        <img src="https://source.unsplash.com/1600x900/?business" alt="Slide 3" />
+      </div>
+    </div>
+  </section>
+  
+ <section class="container" id="A">
+    <div class="text-area">
+      <h1 class="watch">About Us</h1>
+      <h2 class="watch">Landing Page</h2>
+      <p class="watch">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis quam non enim blandit tempor. Proin ac tellus.
+      </p>
+      <button class="watch" onclick="alert('Getting Started…')">Get Started</button>
+    </div>
+
+    <div class="team">
+      <div class="member watch"><div class="avatar"><img src="ss.jpg" alt="Member 1"></div></div>
+      <div class="member watch"><div class="avatar"><img src="aa.jpg" alt="Member 2"></div></div>
+      <div class="member watch"><div class="avatar"><img src="bb.jpg" alt="Member 3"></div></div>
+      <div class="member watch"><div class="avatar"><img src="sa.jpg" alt="Member 4"></div></div>
+    </div>
+  </section>
+
+   <section class="services-section">
+    <div class="services-header" id="S">
+      <h2>Our Core Services</h2>
+      <p>Empowering your business with cutting-edge solutions.</p>
+    </div>
+
+    <div class="services-container">
+      <div class="service-card">
+        <div class="icon">💻</div>
+        <h3>Software Development</h3>
+        <p>We build custom web, mobile, and desktop applications using React, Node.js, and Python tailored for your business needs.</p>
+          <button class="cta-btn" onclick="alert('Getting Started…')">Get Started</button>
+      </div>
+      <div class="service-card">
+        <div class="icon">📈</div>
+        <h3>Digital Marketing</h3>
+        <p>From SEO to social media, we drive digital growth using tools like Google Ads, Meta Business Suite, and analytics platforms.</p>
+          <button class="cta-btn" onclick="alert('Getting Started…')">Get Started</button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="contact-section">
+    <div class="contact-header">
+      <h2>Contact Us</h2>
+      <p>Let's discuss how we can help your business grow.</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-details">
+        <h3>Get in Touch</h3>
+        <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@company.com">info@company.com</a></p>
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=Times%20Square,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="tel" placeholder="Your Phone" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-column animate-on-scroll">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column animate-on-scroll">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column animate-on-scroll">
+        <h4>Newsletter</h4>
+        <p>Get the latest news and updates.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 NUAM. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // ✅ Fix: define 'slide' first
+  const slide = document.getElementById('carousel-slide');
+  const images = slide.querySelectorAll('img');
+  let index = 0;
+
+  function nextSlide() {
+    index++;
+    if (index >= images.length) {
+      index = 0;
+    }
+    slide.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  setInterval(nextSlide, 5000); // Change every 4 seconds
+
+   const options = { threshold: 0.2 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  // Watch elements
+  document.querySelectorAll('.watch').forEach((el, index) => {
+    el.style.animationDelay = `${index * 0.3}s`; // delay 0.3s between each
+    observer.observe(el);
+  });
+
+   const cards = document.querySelectorAll('.service-card');
+
+const serviceObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    } else {
+      entry.target.classList.remove('animate');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+cards.forEach(card => {
+  serviceObserver.observe(card);
+});
+const sections = document.querySelectorAll('.contact-details, .contact-form');
+
+const contactObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+sections.forEach(section => {
+  contactObserver.observe(section);
+});
+
+const footerSections = document.querySelectorAll('.animate-on-scroll');
+
+const footerObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+footerSections.forEach(section => {
+  footerObserver.observe(section);
+});
+</script>
+
+
+</body>
+</html>
