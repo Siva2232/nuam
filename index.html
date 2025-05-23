@@ -149,13 +149,24 @@
     </div>
   </footer>
   <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
+  // Select the nav menu
+const navMenu = document.getElementById('nav-menu');
 
-  menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-  });
+// Create a mobile Contact Us button dynamically
+const mobileContactBtn = document.createElement('button');
+mobileContactBtn.classList.add('cta-btn', 'mobile-only');
+mobileContactBtn.textContent = 'Contact us';
+
+// Append button inside nav menu
+navMenu.appendChild(mobileContactBtn);
+
+// Your existing toggle code (make sure this is there)
+const menuToggle = document.getElementById('menu-toggle');
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+});
+
 
   // ✅ Fix: define 'slide' first
   const slide = document.getElementById('carousel-slide');
