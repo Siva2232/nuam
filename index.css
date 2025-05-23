@@ -155,7 +155,7 @@
         top: 70px;
         right: -100%;
         height: calc(100vh - 70px);
-        
+        background: linear-gradient(90deg, #f4f6f7 0%, #e1f7ff 100%);
         width: 220px;
         flex-direction: column;
         padding: 30px;
