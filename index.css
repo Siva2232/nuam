@@ -400,7 +400,7 @@
   justify-content: center;
   background-color: var(--dark); /* white */
   color: var(--light); /* dark text */
-  overflow: hidden;
+  overflow: visible; /* FIXED: allow glow to be visible */
   padding: 2rem;
 }
 
@@ -523,13 +523,12 @@
   transition: all 0.3s;
   opacity: 0;
   transform: translateY(20px);
+  z-index: 1; /* FIXED: ensure glow goes behind button, not entire section */
 }
-
 .glow-button:hover {
   background: rgba(0, 119, 255, 0.05);
   box-shadow: 0 0 20px rgba(0, 119, 255, 0.2);
 }
-
 .glow {
   position: absolute;
   top: 0;
@@ -545,6 +544,7 @@
 .glow-button:hover .glow {
   opacity: 0.2;
 }
+
 
 /* Animations */
 @keyframes float {
