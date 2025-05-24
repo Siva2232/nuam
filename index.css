@@ -564,7 +564,7 @@
 
   .services-section {
     padding: 5rem 0;
-     background-color: var(--dark); /* white */
+     background-color: white;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow: hidden;
   }
