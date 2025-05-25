@@ -38,7 +38,7 @@
 
 /* Limit the image size and apply hover effect */
 .logo img {
-  max-width: 65px; /* Adjust this as needed */
+  max-width: 50px; /* Adjust this as needed */
   height: auto;
   transition: transform 0.3s ease;
 }
