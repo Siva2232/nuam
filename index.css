@@ -31,18 +31,17 @@
     }
 
     /* Logo */
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      cursor: pointer;
-      color: #547c83;
-      transition: transform 0.3s ease;
-    }
-    .logo:hover {
-      transform: scale(1.1) rotate(-5deg);
-    }
+    .logo img {
+  width: 280px; /* Adjust as needed */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
+/* Hover effect */
+.logo img:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
     /* Navigation */
     nav {
       display: flex;
