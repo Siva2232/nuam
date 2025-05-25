@@ -31,15 +31,20 @@
     }
 
     /* Logo */
-    .logo img {
-  width: 280px; /* Adjust as needed */
-  height: auto;
+    .logo {
+  display: inline-block;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-/* Hover effect */
-.logo img:hover {
+/* Limit the image size and apply hover effect */
+.logo img {
+  max-width: 90px; /* Adjust this as needed */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
   transform: scale(1.1) rotate(-5deg);
 }
     /* Navigation */
