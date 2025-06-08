@@ -315,6 +315,7 @@ nav a:hover {
     transition: all 0.4s ease;
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
     outline: none;
+    margin-top: 450px;
 }
 
 .cta-btn1:hover {
@@ -364,6 +365,7 @@ nav a:hover {
     .cta-btn1 {
         padding: 12px 30px;
         font-size: 1rem;
+         margin-top: 518px;
     }
 }
 
