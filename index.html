@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black and White Loading Page</title>
+  <title>Nuam Enterprises</title>
   <style>
     body {
       margin: 0;
@@ -15,20 +15,14 @@
       background-size: 400%;
       animation: grayscaleShift 10s ease infinite;
       font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
     }
     .loader-container {
       text-align: center;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
-      z-index: 1;
-      transition: opacity 0.5s ease;
-    }
-    .loader-container.hidden {
-      opacity: 0;
     }
     .loader-image {
       width: 120px;
@@ -39,10 +33,10 @@
       animation: rotate 4s linear infinite, pulse 1.5s ease-in-out infinite;
     }
     .progress-bar {
-      width: 250px;
-      height: 12px;
+      width: 200px;
+      height: 10px;
       background: #333333;
-      border-radius: 6px;
+      border-radius: 5px;
       margin: 20px auto;
       overflow: hidden;
     }
@@ -50,57 +44,13 @@
       width: 0;
       height: 100%;
       background: #ffffff;
-      transition: width 0.02s linear;
+      transition: width 0.1s ease;
     }
     .counter {
-      font-size: 3em;
-      font-weight: 900;
+      font-size: 2.5em;
+      font-weight: bold;
       color: #ffffff;
-      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-      transition: all 0.02s ease;
-    }
-    .welcome-text {
-      position: absolute;
-      font-size: 4em;
-      font-weight: 900;
-      color: #ffffff;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: 1;
-    }
-    .welcome-text.visible {
-      opacity: 1;
-    }
-    .door-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      z-index: 2;
-      visibility: hidden;
-    }
-    .door {
-      flex: 1;
-      background: #1a1a1a;
-      transition: transform 1s ease-in-out;
-    }
-    .door-left {
-      transform: translateX(0);
-    }
-    .door-right {
-      transform: translateX(0);
-    }
-    .door-left.open {
-      transform: translateX(-100%);
-    }
-    .door-right.open {
-      transform: translateX(100%);
-    }
-    .door-container.visible {
-      visibility: visible;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     @keyframes grayscaleShift {
       0% { background-position: 0% 50%; }
@@ -119,52 +69,28 @@
   </style>
 </head>
 <body>
-  <div class="loader-container" id="loaderContainer">
+  <div class="loader-container">
     <img src="Logo.png" alt="Loading Image" class="loader-image">
     <div class="progress-bar">
       <div class="progress" id="progress"></div>
     </div>
     <div class="counter" id="counter">0%</div>
   </div>
-  <div class="welcome-text" id="welcomeText">Welcome</div>
-  <div class="door-container" id="doorContainer">
-    <div class="door door-left"></div>
-    <div class="door door-right"></div>
-  </div>
   <script>
     let counter = 0;
     const counterElement = document.querySelector('#counter');
     const progressElement = document.querySelector('#progress');
-    const loaderContainer = document.querySelector('#loaderContainer');
-    const welcomeText = document.querySelector('#welcomeText');
-    const doorContainer = document.querySelector('#doorContainer');
-    const doorLeft = document.querySelector('.door-left');
-    const doorRight = document.querySelector('.door-right');
-
-    const updateCounter = () => {
-      if (counter <= 100) {
-        counterElement.textContent = `${counter}%`;
-        progressElement.style.width = `${counter}%`;
-        counter++;
-        setTimeout(updateCounter, 40); // 20ms interval for ~2s total
-      } else {
-        // Hide loader and show Welcome text
-        loaderContainer.classList.add('hidden');
+    const interval = setInterval(() => {
+      counter++;
+      counterElement.textContent = `${counter}%`;
+      progressElement.style.width = `${counter}%`;
+      if (counter >= 100) {
+        clearInterval(interval);
         setTimeout(() => {
-          welcomeText.classList.add('visible');
-          setTimeout(() => {
-            doorContainer.classList.add('visible');
-            doorLeft.classList.add('open');
-            doorRight.classList.add('open');
-            setTimeout(() => {
-              window.location.href = 'fullpage.html';
-            }, 1000); // Wait for door animation (1s)
-          }, 1000); // Show Welcome for 1s
-        }, 500); // Pause to show 100% for 500ms
+          window.location.href = 'fullpage.html';
+        }, 500); // Brief delay for smooth transition
       }
-    };
-
-    updateCounter();
+    }, 50);
   </script>
 </body>
 </html>
